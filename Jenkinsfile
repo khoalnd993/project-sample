@@ -1,15 +1,19 @@
 pipeline {
-    agent none
+    agent { docker 'gcc:latest' }
     stages {
         stage('Get code') {
-            agent { docker 'gcc:latest' }
             steps {
                 sh 'make clean-all'
             }
         }
-        stage('Clean environment') {
+        stage('Clean object') {
             steps {
                 sh 'make clean-obj'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'make'
             }
         }
     }
