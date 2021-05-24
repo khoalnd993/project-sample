@@ -4,7 +4,7 @@ pipeline {
         stage('Get code') {
             agent { docker 'gcc:latest' }
             steps {
-                sh 'make clean-all'
+                sh 'git clone https://github.com/khoalnd993/project-sample.git'
             }
         }
         stage('Clean environment') {
