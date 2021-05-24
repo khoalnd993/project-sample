@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'gcc:latest' }
+    agent any
     stages {
         stage('Get code') {
             agent { docker 'gcc:latest' }
@@ -8,7 +8,6 @@ pipeline {
             }
         }
         stage('Clean environment') {
-            agent { docker 'gcc:latest' }
             steps {
                 sh 'Make clean'
             }
