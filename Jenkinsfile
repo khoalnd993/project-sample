@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Example Build') {
+        stage('Get code') {
             steps {
-                echo 'Hello, Maven'
+                sh 'git clone https://github.com/khoalnd993/project-sample.git'
             }
         }
         stage('Example Test') {
