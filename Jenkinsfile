@@ -14,7 +14,6 @@ pipeline {
         stage('build') {
             steps {
                 sh 'make'
-                archiveArtifacts artifacts: '/var/jenkins_home/workspace/C++Project/build/app', fingerprint: true
             }
         }
     }
