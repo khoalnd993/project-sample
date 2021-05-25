@@ -14,7 +14,16 @@ pipeline {
         stage('build') {
             steps {
                 sh 'make'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
+    }
+    post {
+      success {
+        echo "SUCCESSFUL"
+      }
+      failure {
+        echo "FAILED"
+      }
     }
 }
