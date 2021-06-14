@@ -1,5 +1,4 @@
 pipeline {
-#    agent { docker 'gcc:latest' }
     agent none
     stages {
         stage('Get code') {
